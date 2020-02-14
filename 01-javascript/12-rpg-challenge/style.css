@@ -51,3 +51,20 @@
     border-radius: 360px;
     transform: rotate(-0.085turn);
 }
+
+.section-panels {
+    display: grid;
+    
+    grid-template-columns: repeat(50, 1em);
+    grid-template-rows: repeat(6, 1em); 
+}
+
+.section-panels__fighter-01 {
+    grid-column: 5 / 18;
+    grid-row: 2 / auto;
+}
+
+.section-panels__fighter-02 {
+    grid-column: 30 / 43;
+    grid-row: 2 / auto;
+}
