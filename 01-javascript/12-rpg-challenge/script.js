@@ -1,4 +1,7 @@
 (() => {
+    let playerName;
+    let playerRace = "Orcs";
+    let newId;
 
     const getCharacter = () => {
         return fetch("http://localhost/becode/fevrier/12-rpg-challenge/01-javascript/12-rpg-challenge/caracter-data.json")
@@ -22,10 +25,11 @@
     };
 
     document.querySelector("#button-valide-01").addEventListener("click", () => {
-        let playerName = document.querySelector("#input-name-01").value;
-        let playerRace = "Orcs";
+        playerName = document.querySelector("#input-name-01").value;
+    
         console.log(playerName);
         let post = {
+            id: newId,
             name: playerName,
             race : playerRace
 
