@@ -1,0 +1,18 @@
+{
+    "character": [
+        {
+            "id": 1,
+            "name": "Dérakar",
+            "race": "Vampires",
+            "items": [
+                "Magic sword",
+                "Night cap"
+            ],
+            "abilities": [
+                "bite",
+                "punch",
+                "defense"
+            ]
+        }
+    ]
+}

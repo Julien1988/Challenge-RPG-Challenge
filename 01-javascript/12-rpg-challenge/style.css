@@ -68,3 +68,23 @@
     grid-column: 30 / 43;
     grid-row: 2 / auto;
 }
+
+.section-create-fighter {
+    display: grid;
+    grid-template-columns: repeat(50, 1em);
+    grid-template-rows: repeat(10, 1em); 
+}
+
+.section-create-fighter__fighter-01 {
+    grid-column: 5 / 18;
+    grid-row: 2 / auto;
+}
+
+.section-create-fighter__fighter-02 {
+    grid-column: 30 / 43;
+    grid-row: 2 / auto;
+}
+
+.button-valide {
+    margin-top: 1em;
+}
