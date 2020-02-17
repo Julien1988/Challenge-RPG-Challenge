@@ -1,90 +1,92 @@
 .section-fight-screen {
-    display: grid;
-    
-    grid-template-columns: repeat(50, 1em);
-    grid-template-rows: repeat(16, 1em); 
+  display: grid;
+
+  grid-template-columns: repeat(50, 1em);
+  grid-template-rows: repeat(16, 1em);
 }
 
 .section-fight-screen__fighter {
-    border: 2px solid blueviolet;
-    display: grid;
-    grid-template-columns: repeat(10, auto);
-    grid-template-rows: repeat(10, auto); 
-    border-radius: 10px;
-
+  border: 2px solid blueviolet;
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  grid-template-rows: repeat(10, auto);
+  border-radius: 10px;
 }
 
 .section-fight-screen__fighter-01 {
-    grid-column: 1 / 25;
-    grid-row: 1 / 17;
-    background-image: url("resources/fighter-01-img.jpg");
-    background-repeat: round;
+  grid-column: 1 / 25;
+  grid-row: 1 / 17;
+  background-image: url("resources/fighter-01-img.jpg");
+  background-repeat: round;
 }
 
 .section-fight-screen__fighter-02 {
-    grid-column: 26 / 51;
-    grid-row: 1 / 17;
-    background-image: url("resources/fighter-02-img.jpeg");
-    background-repeat: round;
-    
+  grid-column: 26 / 51;
+  grid-row: 1 / 17;
+  background-image: url("resources/fighter-02-img.jpeg");
+  background-repeat: round;
 }
 
 .section-fight-screen__fighter__pseudo {
-    grid-column: 2 / auto;
-    grid-row: 10 / 11;
-    color: blueviolet;
-    background-color: rgba(241, 241, 241, 0.5);
-    text-align: center;
-    font-size: 2em;
+  grid-column: 2 / auto;
+  grid-row: 10 / 11;
+  color: blueviolet;
+  background-color: rgba(241, 241, 241, 0.5);
+  text-align: center;
+  font-size: 2em;
 }
 
 .section-fight-screen__versus {
-    z-index: +2;
-    grid-column: 21 / 30;
-    grid-row: 6 / 10;
-    
-    border-radius: 360px;
+  z-index: +2;
+  grid-column: 21 / 30;
+  grid-row: 6 / 10;
+
+  border-radius: 360px;
 }
 
 .section-fight-screen__versus__image {
-    max-width: 100%;
-    border-radius: 360px;
-    transform: rotate(-0.085turn);
+  max-width: 100%;
+  border-radius: 360px;
+  transform: rotate(-0.085turn);
 }
 
 .section-panels {
-    display: grid;
-    
-    grid-template-columns: repeat(50, 1em);
-    grid-template-rows: repeat(6, 1em); 
+  display: grid;
+
+  grid-template-columns: repeat(50, 1em);
+  grid-template-rows: repeat(6, 1em);
 }
 
 .section-panels__fighter-01 {
-    grid-column: 5 / 18;
-    grid-row: 2 / auto;
+  grid-column: 5 / 18;
+  grid-row: 2 / auto;
 }
 
 .section-panels__fighter-02 {
-    grid-column: 30 / 43;
-    grid-row: 2 / auto;
+  grid-column: 30 / 43;
+  grid-row: 2 / auto;
 }
 
 .section-create-fighter {
-    display: grid;
-    grid-template-columns: repeat(50, 1em);
-    grid-template-rows: repeat(10, 1em); 
+  display: grid;
+  grid-template-columns: repeat(50, 1em);
+  grid-template-rows: repeat(10, 1em);
 }
 
 .section-create-fighter__fighter-01 {
-    grid-column: 5 / 18;
-    grid-row: 2 / auto;
+  grid-column: 5 / 18;
+  grid-row: 2 / auto;
 }
 
 .section-create-fighter__fighter-02 {
-    grid-column: 30 / 43;
-    grid-row: 2 / auto;
+  grid-column: 30 / 43;
+  grid-row: 2 / auto;
 }
 
 .button-valide {
-    margin-top: 1em;
+  margin-top: 1em;
+}
+
+.dropdown {
+  margin-top: 1em;
 }

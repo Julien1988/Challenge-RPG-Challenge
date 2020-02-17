@@ -1,99 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
- 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Fight Game</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <main>
-        
-        
-        <section class="section section-fight-screen">
-            <div class="section-fight-screen__fighter section-fight-screen__fighter-01">
-                <h1 class="section-fight-screen__fighter__pseudo section-fight-screen__fighter-01__pseudo">Fighter 01</h1>
+      <section class="section section-fight-screen">
+        <div
+          class="section-fight-screen__fighter section-fight-screen__fighter-01"
+        >
+          <h1
+            class="section-fight-screen__fighter__pseudo section-fight-screen__fighter-01__pseudo"
+          >
+            Fighter 01
+          </h1>
+        </div>
+        <div class="section-fight-screen__versus">
+          <img
+            src="resources/versus-fight-image.jpg"
+            alt=""
+            class="section-fight-screen__versus__image"
+          />
+        </div>
+        <div
+          class="section-fight-screen__fighter section-fight-screen__fighter-02"
+        >
+          <h1 class="section-fight-screen__fighter__pseudo">Fighter 02</h1>
+        </div>
+      </section>
+
+      <section class="section section-panels">
+        <div class="section-panels__fighter section-panels__fighter-01">
+          <!-- (hit, heal & yield. Those are the moves.) -->
+          <button class="section-panels__fighter__button">Hit</button>
+          <button class="section-panels__fighter__button">heal</button>
+          <button class="section-panels__fighter__button">yield</button>
+        </div>
+
+        <div class="section-panels__fighter section-panels__fighter-02">
+          <!-- (hit, heal & yield. Those are the moves.) -->
+          <button class="section-panels__fighter__button">Hit</button>
+          <button class="section-panels__fighter__button">heal</button>
+          <button class="section-panels__fighter__button">yield</button>
+        </div>
+      </section>
+
+      <section class="section section-create-fighter">
+        <div
+          class="section-create-fighter__fighter section-create-fighter__fighter-01"
+        >
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm"
+                >Name</span
+              >
             </div>
-            <div class="section-fight-screen__versus">
-                <img src="resources/versus-fight-image.jpg" alt="" class="section-fight-screen__versus__image">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm"
+              id="input-name-01"
+            />
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton-01"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Race
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              id="input-race-01"
+            >
+              <button
+                role="button"
+                class="dropdown-item"
+                id="humain-01"
+                value="human"
+              >
+                Human
+              </button>
+              <button
+                role="button"
+                class="dropdown-item"
+                id="orcs-01"
+                value="orcs"
+              >
+                Orcs
+              </button>
+              <button
+                role="button"
+                class="dropdown-item"
+                id="elves-01"
+                value="elves"
+              >
+                Elves
+              </button>
+              <button
+                role="button"
+                class="dropdown-item"
+                id="vampires-01"
+                value="vampires"
+              >
+                Vampires
+              </button>
             </div>
-            <div class="section-fight-screen__fighter section-fight-screen__fighter-02">
-                <h1 class="section-fight-screen__fighter__pseudo">Fighter 02</h1>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton-001"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Item
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              id="input-item-01"
+            >
+              <button class="dropdown-item" value="sword" id="sword-01">
+                Sword
+              </button>
+              <button
+                class="dropdown-item"
+                value="magic sticks"
+                id="magic-sticks-01"
+              >
+                Magic Sticks
+              </button>
+              <button class="dropdown-item" value="armor" id="armor-01">
+                Armor
+              </button>
             </div>
-        </section>
-        
-        <section class="section section-panels">
-            <div class="section-panels__fighter section-panels__fighter-01">
-                <!-- (hit, heal & yield. Those are the moves.) -->
-                <button class="section-panels__fighter__button">Hit</button>
-                <button class="section-panels__fighter__button">heal</button>
-                <button class="section-panels__fighter__button">yield</button>
-                
+          </div>
+          <button
+            type="button"
+            id="button-valide-01"
+            class="btn btn-dark button-valide"
+          >
+            OK
+          </button>
+        </div>
+
+        <div
+          class="section-create-fighter__fighter section-create-fighter__fighter-02"
+        >
+          <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm-02"
+                >Name</span
+              >
             </div>
-            
-            <div class="section-panels__fighter section-panels__fighter-02">
-                <!-- (hit, heal & yield. Those are the moves.) -->
-                <button class="section-panels__fighter__button">Hit</button>
-                <button class="section-panels__fighter__button">heal</button>
-                <button class="section-panels__fighter__button">yield</button>
-                
+            <input
+              type="text"
+              id="input-name-02"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-sm"
+            />
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton-02"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Race
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              id="input-race-02"
+            >
+              <button
+                role="button"
+                class="dropdown-item"
+                id="humain-02"
+                value="human"
+              >
+                Human
+              </button>
+              <button
+                role="button"
+                class="dropdown-item"
+                id="orcs-02"
+                value="orcs"
+              >
+                Orcs
+              </button>
+              <button
+                role="button"
+                class="dropdown-item"
+                id="elves-02"
+                value="elves"
+              >
+                Elves
+              </button>
+              <button
+                role="button"
+                class="dropdown-item"
+                id="vampires-02"
+                value="vampires"
+              >
+                Vampires
+              </button>
             </div>
-        </section>
-        
-        <section class="section section-create-fighter">
-            <div class="section-create-fighter__fighter section-create-fighter__fighter-01">
-                <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">Name</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="input-name-01">
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Race
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Human</a>
-                        <a class="dropdown-item" href="#">Orcs</a>
-                        <a class="dropdown-item" href="#">Elves</a>
-                        <a class="dropdown-item" href="#">Vampires</a>
-                    </div>
-                </div>
-                <button type="button" id="button-valide-01" class="btn btn-dark button-valide">OK</button>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton-002"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Item
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              id="input-item-02"
+            >
+              <button class="dropdown-item" value="sword" id="sword-02">
+                Sword
+              </button>
+              <button
+                class="dropdown-item"
+                value="magic sticks"
+                id="magic-sticks-02"
+              >
+                Magic Sticks
+              </button>
+              <button class="dropdown-item" value="armor" id="armor-02">
+                Armor
+              </button>
             </div>
-        
-                <div class="section-create-fighter__fighter section-create-fighter__fighter-02">
-                    <div class="input-group input-group-sm mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-sm-02">Name</span>
-                        </div>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton-02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Race
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Human</a>
-                            <a class="dropdown-item" href="#">Orcs</a>
-                            <a class="dropdown-item" href="#">Elves</a>
-                            <a class="dropdown-item" href="#">Vampires</a>
-                        </div>
-                    </div>
-                    <button type="button" id="button-valide-02" class="btn btn-dark button-valide">OK</button>
-                </div>
-            </section>
+          </div>
+          <button
+            type="button"
+            id="button-valide-02"
+            class="btn btn-dark button-valide"
+          >
+            OK
+          </button>
+        </div>
+      </section>
     </main>
     <script src="character.js"></script>
     <script src="script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        
-    </body>
-    </html>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
