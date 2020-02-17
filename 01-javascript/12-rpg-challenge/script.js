@@ -36,6 +36,7 @@
 
   //   Race Selection :
   let playerOneRace = false;
+  let playerOne;
 
   document.querySelector("#humain-01").addEventListener("click", () => {
     playerOneRace = document.querySelector("#humain-01").value;
@@ -96,6 +97,10 @@
       alert("Il faut remplir tous les champs joueur 1 !");
     }
 
+    document.querySelector(
+      ".section-fight-screen__fighter-01__pseudo"
+    ).innerHTML = `Fighter 1 is ${playerOneName}`;
+
     console.log(
       "name: ",
       playerOneName,
@@ -104,12 +109,36 @@
       "Item: ",
       playerOneItem
     );
+    //   Person Object
+
+    playerOne = new Person(playerOneRace, playerOneItem);
+    console.log(playerOne);
+    playerOne.displayChar();
   });
+  // Fight
+  let actionPlayerOne;
+
+  let getActionButtonPlayerOneLength = document.querySelector(
+    ".section-panels__fighter-01"
+  ).children.length;
+  //console.log(getActionButtonPlayerOneLength);
+
+  for (let i = 0; i < getActionButtonPlayerOneLength; i++) {
+    document
+      .getElementsByClassName("section-panels__fighter__button-01")
+      [i].addEventListener("click", () => {
+        actionPlayerOne = document.getElementsByClassName(
+          "section-panels__fighter__button-01"
+        )[i].value;
+        console.log(actionPlayerOne);
+      });
+  }
 
   //   -- PLAYER TWO
 
   //   Race Selection :
   let playerTwoRace = false;
+  let playerTwo;
 
   document.querySelector("#humain-02").addEventListener("click", () => {
     playerTwoRace = document.querySelector("#humain-02").value;
@@ -170,6 +199,10 @@
       alert("Il faut remplir tous les champs joueur 2 !");
     }
 
+    document.querySelector(
+      ".section-fight-screen__fighter-02__pseudo"
+    ).innerHTML = `Fighter 2 is ${playerTwoName}`;
+
     console.log(
       "name: ",
       playerTwoName,
@@ -178,5 +211,44 @@
       "Item: ",
       playerTwoItem
     );
+    console.log(playerTwo);
+    //   Person Object
+
+    playerTwo = new Person(playerTwoRace, playerTwoItem);
+    console.log(playerTwo);
+    playerTwo.displayChar();
   });
+
+  // Fight
+  let actionPlayerTwo;
+
+  let getActionButtonPlayerTwoLength = document.querySelector(
+    ".section-panels__fighter-02"
+  ).children.length;
+  //console.log(getActionButtonPlayerTwoLength);
+
+  for (let i = 0; i < getActionButtonPlayerTwoLength; i++) {
+    document
+      .getElementsByClassName("section-panels__fighter__button-02")
+      [i].addEventListener("click", () => {
+        actionPlayerTwo = document.getElementsByClassName(
+          "section-panels__fighter__button-02"
+        )[i].value;
+        //console.log(actionPlayerTwo);
+        makeActionPlayer02(actionPlayerTwo);
+      });
+  }
+
+  //   Function de gestion des actions joueur 2
+  function makeActionPlayer02(actionPlayer) {
+    if (actionPlayer === "hit-player-two") {
+      console.log("Tu frappes");
+    } else if (actionPlayer === "heal-player-two") {
+      console.log("Tu te heal");
+    } else if (actionPlayer === "yield-player-two") {
+      console.log("Tu te défands");
+    } else {
+      return console.error("somethings wrong...");
+    }
+  }
 })();
