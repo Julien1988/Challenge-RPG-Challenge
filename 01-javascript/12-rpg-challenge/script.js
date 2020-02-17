@@ -90,7 +90,7 @@
     let playerOneName = document.querySelector("#input-name-01").value;
 
     if (
-      playerOneRace == false ||
+      playerOneName == false ||
       playerOneRace == false ||
       playerOneItem == false
     ) {
@@ -111,7 +111,7 @@
     );
     //   Person Object
 
-    playerOne = new Person(playerOneRace, playerOneItem);
+    playerOne = new Person(playerOneRace, playerOneItem, playerOneName);
     console.log(playerOne);
     playerOne.displayChar();
   });
@@ -131,7 +131,27 @@
           "section-panels__fighter__button-01"
         )[i].value;
         console.log(actionPlayerOne);
+        makeActionPlayer01(actionPlayerOne);
       });
+  }
+  //   Function de gestion des actions joueur 1
+  function makeActionPlayer01(actionPlayer) {
+    if (actionPlayer === "hit-player-one") {
+      console.log("Tu frappes");
+      playerOne.damage(playerOne.name, playerTwo.name);
+      // récupération des dégats effectué par le joueur 2
+      console.log(damage);
+      playerTwo.getHeal(damage, playerTwo.name);
+      console.log(playerOne);
+      console.log(playerTwo);
+    } else if (actionPlayer === "heal-player-one") {
+      console.log("Tu te heal");
+      playerOne.heal(playerOne.name);
+    } else if (actionPlayer === "yield-player-one") {
+      console.log("Tu te défands");
+    } else {
+      return console.error("somethings wrong...");
+    }
   }
 
   //   -- PLAYER TWO
@@ -188,11 +208,13 @@
     return playerTwoItem;
   });
 
+  let playerTwoName;
+
   document.querySelector("#button-valide-02").addEventListener("click", () => {
-    let playerTwoName = document.querySelector("#input-name-02").value;
+    playerTwoName = document.querySelector("#input-name-02").value;
 
     if (
-      playerTwoRace == false ||
+      playerTwoName == false ||
       playerTwoRace == false ||
       playerTwoItem == false
     ) {
@@ -211,10 +233,10 @@
       "Item: ",
       playerTwoItem
     );
-    console.log(playerTwo);
+    //console.log(playerTwo);
     //   Person Object
 
-    playerTwo = new Person(playerTwoRace, playerTwoItem);
+    playerTwo = new Person(playerTwoRace, playerTwoItem, playerTwoName);
     console.log(playerTwo);
     playerTwo.displayChar();
   });
@@ -243,8 +265,15 @@
   function makeActionPlayer02(actionPlayer) {
     if (actionPlayer === "hit-player-two") {
       console.log("Tu frappes");
+      playerTwo.damage(playerTwo.name, playerOne.name);
+      // récupération des dégats effectué par le joueur 2
+      console.log(damage);
+      playerOne.getHeal(damage, playerOne.name);
+      console.log(playerTwo);
+      console.log(playerOne);
     } else if (actionPlayer === "heal-player-two") {
       console.log("Tu te heal");
+      playerTwo.heal(playerTwo.name);
     } else if (actionPlayer === "yield-player-two") {
       console.log("Tu te défands");
     } else {

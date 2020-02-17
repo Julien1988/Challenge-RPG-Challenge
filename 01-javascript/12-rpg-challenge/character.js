@@ -1,21 +1,44 @@
 //Use this script to generate your character
-function Person(race,item){
-    this.race = race;
-    this.item = item;
-    this.currenthealth = 100;
-    this.maxHealth = 100;
-    
-    this.min = 3;
-    this.maxDamage = 20;
-    this.maxHealing = 30;
+let damage;
 
-    this.heal = function(){};
+function Person(race, item, name) {
+  this.race = race;
+  this.item = item;
+  this.name = name;
+  this.currenthealth = 100;
+  this.maxHealth = 100;
 
-    this.damage = function(){};
+  this.min = 3;
+  this.maxDamage = 20;
+  this.maxHealing = 30;
 
-    this.totalDamage = this.damage();
+  this.heal = function(playerTarget) {
+    this.currenthealth = this.currenthealth + this.maxHealing;
+    if (this.currenthealth > this.maxHealth) {
+      this.currenthealth = this.maxHealth;
+    }
+    console.log(`Il reste ${this.currenthealth} à ${playerTarget}`);
+  };
 
-    this.displayChar = function(){
-        return console.log(`I am a ${this.race}, I wield a ${this.item}, my total health point are ${this.maxHealth}`);
-    };
+  this.damage = function(playerAttack, playerTarget) {
+    console.log(
+      `${playerAttack} fait ${this.maxDamage} de dégats à ${playerTarget}`
+    );
+
+    return (damage = this.maxDamage);
+  };
+
+  this.getHeal = function(damage, playerTarget) {
+    this.currenthealth = this.currenthealth - damage;
+    if (this.currenthealth <= 0) {
+      return alert(`${playerTarget} a perdu !`);
+    }
+    console.log(`Il reste ${this.currenthealth} PV à ${playerTarget}`);
+  };
+
+  this.displayChar = function() {
+    return console.log(
+      `I am a ${this.name}, ${this.race}, I wield a ${this.item}, my total health point are ${this.maxHealth}`
+    );
+  };
 }
