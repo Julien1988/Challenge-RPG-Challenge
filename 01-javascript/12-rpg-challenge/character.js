@@ -7,13 +7,16 @@ function Person(race, item, name) {
   this.startHealth = 100;
   this.currenthealth = 100;
   this.maxHealth = 100;
+  this.damage;
 
   this.min = 3;
   this.maxDamage = 20;
   this.maxHealing = 30;
 
   this.heal = function(playerTarget) {
-    this.currenthealth = this.currenthealth + this.maxHealing;
+    this.currenthealth =
+      this.currenthealth +
+      (Math.floor(Math.random() * (this.maxHealing - this.min + 1)) + this.min);
     if (this.currenthealth > this.maxHealth) {
       this.currenthealth = this.maxHealth;
     }
@@ -21,11 +24,11 @@ function Person(race, item, name) {
   };
 
   this.damage = function(playerAttack, playerTarget) {
-    console.log(
-      `${playerAttack} fait ${this.maxDamage} de dégats à ${playerTarget}`
-    );
+    damage =
+      Math.floor(Math.random() * (this.maxDamage - this.min + 1)) + this.min;
+    console.log(`${playerAttack} fait ${damage} de dégats à ${playerTarget}`);
 
-    return (damage = this.maxDamage);
+    return damage;
   };
 
   this.getHeal = function(damage, playerTarget) {
@@ -56,6 +59,17 @@ function Person(race, item, name) {
     } else if (race == "vampires") {
       this.maxDamage += 7;
       this.maxHealing += 7;
+    }
+  };
+
+  this.getItem = function(item) {
+    if (item == "sword") {
+      this.maxDamage += 10;
+    } else if (item == "magic sticks") {
+      this.maxHealing += 5;
+      this.maxDamage += 5;
+    } else if (item == "armor") {
+      this.maxHealth += 10;
     }
   };
 }

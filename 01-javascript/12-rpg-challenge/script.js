@@ -115,6 +115,7 @@ let playerlow = "";
 
     playerOne = new Person(playerOneRace, playerOneItem, playerOneName);
     playerOne.getRace(playerOneRace);
+    playerOne.getItem(playerOneItem);
     console.log(playerOne);
 
     playerOne.displayChar();
@@ -241,6 +242,8 @@ let playerlow = "";
     //   Person Object
 
     playerTwo = new Person(playerTwoRace, playerTwoItem, playerTwoName);
+    playerTwo.getRace(playerTwoRace);
+    playerTwo.getItem(playerTwoItem);
     console.log(playerTwo);
     playerTwo.displayChar();
   });
