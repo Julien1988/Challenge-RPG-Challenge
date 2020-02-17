@@ -1,10 +1,10 @@
 //Use this script to generate your character
-let damage;
 
 function Person(race, item, name) {
   this.race = race;
   this.item = item;
   this.name = name;
+  this.startHealth = 100;
   this.currenthealth = 100;
   this.maxHealth = 100;
 
@@ -40,5 +40,22 @@ function Person(race, item, name) {
     return console.log(
       `I am a ${this.name}, ${this.race}, I wield a ${this.item}, my total health point are ${this.maxHealth}`
     );
+  };
+
+  this.getRace = function(race) {
+    if (race == "human") {
+      // extraHeal = this.maxHealth + 14;
+      this.maxHealth += 14;
+      this.currenthealth += 14;
+      console.log(this.currenthealth);
+      // return extraHeal;
+    } else if (race == "orcs") {
+      this.maxDamage += 14;
+    } else if (race == "elves") {
+      this.maxHealing += 14;
+    } else if (race == "vampires") {
+      this.maxDamage += 7;
+      this.maxHealing += 7;
+    }
   };
 }

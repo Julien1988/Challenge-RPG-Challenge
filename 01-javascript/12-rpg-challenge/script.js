@@ -1,3 +1,5 @@
+let playerlow = "";
+
 (() => {
   // let playerName;
   // let playerRace = "Orcs";
@@ -112,7 +114,9 @@
     //   Person Object
 
     playerOne = new Person(playerOneRace, playerOneItem, playerOneName);
+    playerOne.getRace(playerOneRace);
     console.log(playerOne);
+
     playerOne.displayChar();
   });
   // Fight
